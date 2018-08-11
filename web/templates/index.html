@@ -127,9 +127,12 @@
                 <div class="box"></div>
             </div>
             <div id="menu" class="menu menu_closed">
-                <div style="width: 100%">
-                    Hi!
-                </div>
+				<!--		<div style="width: 100%">	-->
+				<form action="http://0.0.0.0:5000/upload" method="POST" enctype=multipart/form-data>
+					<input type="file" id="new_script" name="Upload new script"/>
+					<input type="submit"/>
+				</form>
+					<!--  </div>	-->
             </div>
         </div>
 

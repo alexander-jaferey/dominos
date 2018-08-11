@@ -1,6 +1,9 @@
-from flask import Flask, request
-from flask import render_template
+import os
+from flask import Flask, request, render_template
+import werkzeug
 from run_script import run_script
+
+
 app = Flask(__name__)
 
 import os
@@ -24,9 +27,18 @@ def update_script():
 
     
 
-@app.route("/upload", methods=["POST"])
+@app.route("/upload", methods=["GET", "POST"])
 def upload_new_script():
     pass
+#    UPLOAD_FOLDER = '../scripts'
+#    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER 
+#    if request.method == 'POST':
+#        if file:
+#                script = werkzeug.datastructures.FileStorage(stream=file,
+#                        filename=file.name)
+#                filename = file.name
+#                script.save(os.path.join(UPLOAD_FOLDER, filename))
+#                return filename
 
 @app.route("/run", methods=["POST"])
 def execute_script():
